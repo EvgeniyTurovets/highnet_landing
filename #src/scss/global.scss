@@ -1,0 +1,134 @@
+$font-main: 'Muller', sans-serif;
+$color-main: #2C2928;
+$color-sec: #FFE9CD;
+
+html,
+body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	outline: transparent;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.content {
+	flex: 1 0 auto;
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+body {
+	font-family: $font-main;
+	font-weight: 400;
+	font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+	color: $color-main;
+}
+
+.container {
+	max-width: 1240px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+.container-big {
+  max-width: 1940px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  max-width: 274px;
+  width: 100%;
+  padding: 17px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-sec;
+  background-color: $color-main;
+  border: 1px solid $color-main;
+  transition: all linear 0.2s;
+  &:hover {
+    color: $color-main;
+    background-color: #fff;
+  }
+}
+
+.section {
+  &__top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: $color-sec;
+    margin-bottom: 38px;
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 100%;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  &__btns {
+  }
+  &__btn {
+    position: relative;
+    margin-left: 46px;
+    line-height: 100%;
+    color: $color-sec;
+    opacity: 0.4;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all linear 0.2s;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-sec;
+      opacity: 0;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+      opacity: 1;
+    }
+    &.active {
+      &::before {
+        opacity: 1;
+      }
+      opacity: 1;
+    }
+  }
+}
