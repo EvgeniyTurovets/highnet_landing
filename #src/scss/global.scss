@@ -134,3 +134,10 @@ body {
     }
   }
 }
+
+.hidden {
+  display: none !important;
+}
+.visible-flex {
+  display: flex !important;
+}

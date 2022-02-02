@@ -1,4 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // табы 
+  $('.js-tab-trigger').on('click', function () {
+    let id = $(this).attr('data-tab'),
+      content = $('.js-tab-content[data-tab="' + id + '"]');
+
+    $(this).closest('.container').find('.js-tab-trigger.active').removeClass('active');
+    $(this).addClass('active');
+
+    $(this).closest('.container').find('.js-tab-content.active').removeClass('active');
+    content.addClass('active');
+  });
+
+  // слайдеры
   new Swiper('.investment__slider', {
     pagination: {
       el: '.slider__pagination',
@@ -13,8 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     spaceBetween: 15,
     slidesPerView: 1,
-    slidesPerColumn: 2,
-    slidesPerGroup: 2,
+    grid: {
+      rows: 2,
+    },
 
     // tab
     observer: true,
@@ -23,11 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       540: {
+        grid: {
+          rows: 1,
+        },
         slidesPerView: 2,
-        slidesPerColumn: 1,
-        slidesPerGroup: 1,
       },
       768: {
+        grid: {
+          rows: 1,
+        },
         slidesPerView: 3,
       },
     },
@@ -47,6 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     spaceBetween: 15,
     slidesPerView: 1,
+    grid: {
+      rows: 2,
+    },
 
     // tab
     observer: true,
@@ -55,11 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       540: {
+        grid: {
+          rows: 1,
+        },
         slidesPerView: 2,
-        slidesPerColumn: 1,
-        slidesPerGroup: 1,
       },
       768: {
+        grid: {
+          rows: 1,
+        },
         slidesPerView: 3,
       },
     },
@@ -77,10 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
       nextEl: '.cases__arrow-next',
       prevEl: '.cases__arrow-prev',
     },
-    spaceBetween: 15,
+    spaceBetween: 30,
     slidesPerView: 1,
-    slidesPerColumn: 2,
-    slidesPerGroup: 2,
+    grid: {
+      rows: 3,
+    },
 
     // tab
     observer: true,
@@ -89,23 +115,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
       540: {
+        grid: {
+          rows: 1,
+        },
         slidesPerView: 2,
-        slidesPerColumn: 1,
-        slidesPerGroup: 1,
       },
       768: {
+        grid: {
+          rows: 1,
+        },
         slidesPerView: 3,
       },
     },
   });
 
+  // бургер
   $('.burger').on('click', function () {
     $(this).toggleClass('active');
     $(this).next('.navigation').toggleClass('active');
   });
 
+  // библиотека стилизации
   $('input, select').styler();
 
+  // выпадашки
   $('.dropdown__title').on('click', function () {
     $(this).closest('.dropdown').toggleClass('active');
     $(this).next('.dropdown__content').slideToggle();
@@ -115,6 +148,38 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).closest('.interactive__card').toggleClass('active');
     $(this).next('.interactive__dropdown').slideToggle();
   });
+
+  $('.application-btn').on('click', function () {
+    $(this).closest('.application__form').addClass('hidden');
+    $(this).closest('.application__left').find('.correct').addClass('visible-flex');
+  });
+
+  // вызов модалок
+  $('.callback__open').on('click', function () {
+    $('.application__modal').addClass('visible-flex');
+    $('body').addClass('modal-open');
+  });
+
+  $('.blog__open').on('click', function () {
+    $('.blog__modal').addClass('visible-flex');
+    $('body').addClass('modal-open');
+  });
+
+  // скрытие модалок
+  $('.modal-close').on('click', function () {
+    $('.modal').removeClass('visible-flex');
+    $('body').removeClass('modal-open');
+  });
+
+  // кнопка на форме отправки
+  $('.correct__btn').on('click', function () {
+    $('.application__form').removeClass('hidden');
+    $('.correct').removeClass('visible-flex');
+    $('.modal').removeClass('visible-flex');
+    $('body').removeClass('modal-open');
+  });
+
+
 
   let video = document.querySelector('.video__item');
   let videoBtn = document.querySelector('.video__middle');
