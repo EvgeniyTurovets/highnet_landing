@@ -73,11 +73,13 @@ body {
   line-height: 14px;
   color: $color-sec;
   background-color: $color-main;
-  border: 1px solid $color-main;
+  // border: 1px solid $color-main;
+  border: none;
   transition: all linear 0.2s;
+  cursor: pointer;
   &:hover {
     color: $color-main;
-    background-color: #fff;
+    background-color: #B5A48F;
   }
 }
 

@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const burgerBtn = document.querySelector('.burger');
-  const topNav = document.querySelector('.navigation');
-
-  burgerBtn.onclick = function () {
-    burgerBtn.classList.toggle('active');
-    topNav.classList.toggle('active');
-  };
-
   new Swiper('.investment__slider', {
     pagination: {
       el: '.slider__pagination',
@@ -107,12 +99,21 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  $('.burger').on('click', function () {
+    $(this).toggleClass('active');
+    $(this).next('.navigation').toggleClass('active');
+  });
 
   $('input, select').styler();
 
   $('.dropdown__title').on('click', function () {
     $(this).closest('.dropdown').toggleClass('active');
     $(this).next('.dropdown__content').slideToggle();
+  });
+
+  $('.contacts__btn').on('click', function () {
+    $(this).closest('.interactive__card').toggleClass('active');
+    $(this).next('.interactive__dropdown').slideToggle();
   });
 
   let video = document.querySelector('.video__item');
