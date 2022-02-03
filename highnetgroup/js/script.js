@@ -187,20 +187,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   video.addEventListener('click', () => {
     if (video.paused) {
-      videoBtn.classList.add('active');
-      video.play();
-    } else {
-      video.pause();
-      videoBtn.classList.remove('active');
+      videoBtn.classList.add('hidden');
+      video.setAttribute('controls', '');
     }
   });
   videoBtn.addEventListener('click', () => {
     if (video.paused) {
-      videoBtn.classList.add('active');
+      videoBtn.classList.add('hidden');
+      video.setAttribute('controls', '');
       video.play();
-    } else {
-      video.pause();
-      videoBtn.classList.remove('active');
     }
   });
 });

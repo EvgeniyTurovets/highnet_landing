@@ -1148,7 +1148,7 @@
     margin-top: 72px;
     font-weight: 700;
     font-size: 14px;
-    line-height: 100%;
+    line-height: 16px;
     & + .calc__label {
       margin-top: 46px;
     }
@@ -1169,7 +1169,7 @@
   .jq-selectbox__select {
     display: flex;
     justify-content: space-between;
-    padding: 18px 25px 18px 17px;
+    padding: 17px 25px 17px 17px;
     font-weight: 500;
     background-color: #F1F3F6;
   }
@@ -1761,6 +1761,10 @@
   &__item {
     width: 100%;
     cursor: pointer;
+    & video {
+      width: 100%;
+      // max-height: 498px !important;
+    }
   }
   &__middle {
     position: absolute;
@@ -2261,13 +2265,8 @@
     bottom: 14px;
     right: 15px;
     transition: all linear 0.2s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     cursor: pointer;
-    &:hover {
-      background-color: $color-sec;
-      &::before {
-        color: $color-main;
-      }
-    }
   }
   &__title {
     display: flex;
@@ -2313,6 +2312,14 @@
     margin-left: 10px;
     color: #FFE9CD;
     font-weight: 300;
+  }
+}
+@media (min-width: 991px) {
+  .interactive__btn:hover {
+    background-color: $color-sec;
+    &::before {
+      color: $color-main;
+    }
   }
 }
 @media (max-width: 991px) {

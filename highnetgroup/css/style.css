@@ -1217,7 +1217,7 @@ body {
   margin-top: 72px;
   font-weight: 700;
   font-size: 14px;
-  line-height: 100%;
+  line-height: 16px;
 }
 
 .calc__label + .calc__label {
@@ -1247,7 +1247,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 18px 25px 18px 17px;
+  padding: 17px 25px 17px 17px;
   font-weight: 500;
   background-color: #F1F3F6;
 }
@@ -1678,6 +1678,10 @@ body {
 .video__item {
   width: 100%;
   cursor: pointer;
+}
+
+.video__item video {
+  width: 100%;
 }
 
 .video__middle {
@@ -2149,15 +2153,8 @@ body {
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
-}
-
-.interactive__btn:hover {
-  background-color: #FFE9CD;
-}
-
-.interactive__btn:hover::before {
-  color: #2C2928;
 }
 
 .interactive__title {
@@ -2251,6 +2248,16 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 58px 20px 25px;
+}
+
+@media (min-width: 991px) {
+  .interactive__btn:hover {
+    background-color: #FFE9CD;
+  }
+
+  .interactive__btn:hover::before {
+    color: #2C2928;
+  }
 }
 
 @media (max-width: 1400px) {
