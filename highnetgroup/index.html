@@ -58,7 +58,7 @@
             </div>
 
             <div class="box box__callback">
-              <button type="button" class="callback callback__open">Заказать звонок</button>
+              <button type="button" class="callback js-modal-trigger" data-modal="1">Заказать звонок</button>
             </div>
           </div>
         </header>
@@ -81,7 +81,7 @@
                   <span class="preview__counter">01.</span>
                   <span class="preview__name">Элитная недвижимость</span>
                 </div>
-                <a class="blog__open preview__link icon-chevron-right"></a>
+                <a href="#elite" class="preview__link icon-chevron-right"></a>
               </div>
 
               <div class="preview__card">
@@ -90,7 +90,7 @@
                   <span class="preview__counter">02.</span>
                   <span class="preview__name">Golden Visa и ВНЖ в Европе</span>
                 </div>
-                <a class="blog__open preview__link icon-chevron-right"></a>
+                <a href="#blog" class="preview__link icon-chevron-right"></a>
               </div>
 
               <div class="preview__card">
@@ -99,7 +99,7 @@
                   <span class="preview__counter">03.</span>
                   <span class="preview__name">Коллекционная недвижимость</span>
                 </div>
-                <a class="blog__open preview__link icon-chevron-right"></a>
+                <a href="#collection" class="preview__link icon-chevron-right"></a>
               </div>
             </div>
 
@@ -980,35 +980,35 @@
               <img src="img/slide-4.jpg" alt="" class="cases__img">
 
               <span class="cases__name">Как получить ВНЖ в Португалии за покупку и реновацию старой виллы</span>
-              <span class="cases__btn">История клиента</span>
+              <span class="cases__btn js-modal-trigger" data-modal="2">История клиента</span>
             </div>
 
             <div class="swiper-slide cases__slide">
               <img src="img/slide-5.jpg" alt="" class="cases__img">
 
               <span class="cases__name">Как получить гражданство Мальты и подтвердить легальность крупного бизнеса</span>
-              <span class="cases__btn">История клиента</span>
+              <span class="cases__btn js-modal-trigger" data-modal="3">История клиента</span>
             </div>
 
             <div class="swiper-slide cases__slide">
               <img src="img/slide-6.jpg" alt="" class="cases__img">
 
               <span class="cases__name">Как получить гражданство Мальты и подтвердить легальность крупного бизнеса</span>
-              <span class="cases__btn">История клиента</span>
+              <span class="cases__btn js-modal-trigger" data-modal="2">История клиента</span>
             </div>
 
             <div class="swiper-slide cases__slide">
               <img src="img/slide-6.jpg" alt="" class="cases__img">
 
               <span class="cases__name">Как получить гражданство Мальты и подтвердить легальность крупного бизнеса</span>
-              <span class="cases__btn">История клиента</span>
+              <span class="cases__btn js-modal-trigger" data-modal="2">История клиента</span>
             </div>
 
             <div class="swiper-slide cases__slide">
               <img src="img/slide-6.jpg" alt="" class="cases__img">
 
               <span class="cases__name">Как получить гражданство Мальты и подтвердить легальность крупного бизнеса</span>
-              <span class="cases__btn">История клиента</span>
+              <span class="cases__btn js-modal-trigger" data-modal="2">История клиента</span>
             </div>
           </div>
 
@@ -1220,7 +1220,7 @@
     </div>
 
     <!-- модалки -->
-    <div class="modal application__modal">
+    <div class="modal application__modal js-modal-content" data-modal="1">
       <div class="modal-close modal-close__outside">
         Закрыть
         <span class="modal-close__icon">
@@ -1308,7 +1308,32 @@
       </div>
     </div>
 
-    <div class="modal blog__modal">
+    <div class="modal blog__modal js-modal-content" data-modal="2">
+      <div class="modal-close modal-close__outside black">
+        Закрыть
+        <span class="modal-close__icon">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L12 12M1 12L12 1" stroke="#FFE9CD" />
+          </svg>
+        </span>
+      </div>
+
+      <div class="modal__wrapper">
+        <div class="modal-close modal-close__inside black">
+          Закрыть
+          <span class="modal-close__icon">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L12 12M1 12L12 1" stroke="#FFE9CD" />
+            </svg>
+          </span>
+        </div>
+
+        <h3 class="modal__title">Как получить ВНЖ в Португалии за покупку и реновацию старой виллы</h3>
+        <img src="img/img7.jpg" alt="" class="modal__img">
+        <p class="modal__text">Противоположная точка зрения подразумевает, что реплицированные с зарубежных источников, современные исследования призывают нас к новым свершениям, которые, в свою очередь, должны быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. В своём стремлении улучшить пользовательский опыт мы упускаем, что сторонники тоталитаризма в науке набирают популярность среди определенных слоев населения, а значит, должны быть обнародованы. Также как сплочённость команды профессионалов однозначно определяет каждого участника как способного принимать собственные решения касаемо экономической целесообразности принимаемых решений.</p>
+      </div>
+    </div>
+    <div class="modal blog__modal js-modal-content" data-modal="3">
       <div class="modal-close modal-close__outside black">
         Закрыть
         <span class="modal-close__icon">
@@ -1374,7 +1399,7 @@
         </div>
 
         <div class="box box__callback">
-          <button type="button" class="callback callback__open">Заказать звонок</button>
+          <button type="button" class="callback js-modal-trigger" data-modal="1">Заказать звонок</button>
         </div>
       </div>
     </footer>

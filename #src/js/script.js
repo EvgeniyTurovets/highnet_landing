@@ -155,13 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // вызов модалок
-  $('.callback__open').on('click', function () {
-    $('.application__modal').addClass('visible-flex');
-    $('body').addClass('modal-open');
-  });
+  $('.js-modal-trigger').on('click', function () {
+    let id = $(this).attr('data-modal'),
+      content = $('.js-modal-content[data-modal="' + id + '"]');
 
-  $('.blog__open').on('click', function () {
-    $('.blog__modal').addClass('visible-flex');
+    content.addClass('visible-flex');
     $('body').addClass('modal-open');
   });
 
