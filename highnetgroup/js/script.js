@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
     content.addClass('active');
   });
 
+  // Калькуляторы
+  $('.js-calc__path').on('change', function () {
+    let id = $(this).val();
+    let container = $(this).closest('.calc');
+    let content = container.find('.js-path-content[data-path="' + id + '"]');
+
+    container.find('.js-path-content').removeClass('active');
+    content.addClass('active');
+  });
+  $('.calc__submit').on('click', function (event) {
+    event.preventDefault();
+  });
   // слайдеры
   new Swiper('.investment__slider', {
     pagination: {
@@ -149,11 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).next('.interactive__dropdown').slideToggle();
   });
 
-  $('.application-btn').on('click', function () {
-    $(this).closest('.application__form').addClass('hidden');
-    $(this).closest('.application__left').find('.correct').addClass('visible-flex');
-  });
-
   // вызов модалок
   $('.js-modal-trigger').on('click', function () {
     let id = $(this).attr('data-modal'),
@@ -169,7 +176,30 @@ document.addEventListener("DOMContentLoaded", function () {
     $('body').removeClass('modal-open');
   });
 
+  // маска для телефона
+  $.fn.setCursorPosition = function (pos) {
+    if ($(this).get(0).setSelectionRange) {
+      $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+      var range = $(this).get(0).createTextRange();
+      range.collapse(true);
+      range.moveEnd('character', pos);
+      range.moveStart('character', pos);
+      range.select();
+    }
+  };
+  $(".application__phone").on('click', function () {
+    $(this).setCursorPosition(3);
+  }).mask("+7 (999) 999 9999");
   // кнопка на форме отправки
+  $('.application-btn').on('click', function () {
+    $(this).closest('.application__form').addClass('hidden');
+    $(this).closest('.application__left').find('.correct').addClass('visible-flex');
+  });
+
+
+
+
   $('.correct__btn').on('click', function () {
     $('.application__form').removeClass('hidden');
     $('.correct').removeClass('visible-flex');
@@ -177,8 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $('body').removeClass('modal-open');
   });
 
-
-
+  // плеер
   let video = document.querySelector('.video__item');
   let videoBtn = document.querySelector('.video__middle');
   video.volume = 0.2;
@@ -187,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (video.paused) {
       videoBtn.classList.add('hidden');
       video.setAttribute('controls', '');
+      video.play();
     }
   });
   videoBtn.addEventListener('click', () => {

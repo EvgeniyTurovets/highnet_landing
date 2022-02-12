@@ -441,7 +441,7 @@ body {
 .callback::after {
   content: '';
   position: absolute;
-  bottom: 3px;
+  bottom: 1px;
   left: 0;
   right: 0;
   height: 1px;
@@ -906,6 +906,21 @@ body {
   overflow: hidden;
 }
 
+.slider__slide:hover .slider__name::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #FFE9CD;
+}
+
+.slider__slide:hover .slider__description {
+  height: auto;
+  overflow: visible;
+}
+
 .slider__img {
   width: 100%;
   height: 100%;
@@ -939,11 +954,18 @@ body {
 }
 
 .slider__name {
+  position: relative;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-weight: 500;
   font-size: 18px;
 }
 
 .slider__description {
+  height: 14px;
+  overflow: hidden;
   margin-top: 15px;
   font-size: 16px;
   opacity: 0.5;
@@ -1231,10 +1253,6 @@ body {
 
 .calc__label + .calc__label {
   margin-top: 46px;
-}
-
-.calc select {
-  display: none;
 }
 
 .calc .jq-selectbox {
@@ -1680,12 +1698,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   max-width: 892px;
   margin: 27px auto 0;
 }
 
 .video__item {
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  max-height: 498px;
   cursor: pointer;
 }
 
@@ -1716,6 +1741,7 @@ body {
 .video__text {
   margin-left: 34px;
   color: #fff;
+  white-space: nowrap;
 }
 
 .application {
@@ -1774,9 +1800,10 @@ body {
   height: 63px;
   padding: 21px 10px 21px 0;
   margin-right: 10px;
-  color: #FFF7EE;
-  background-color: transparent;
+  color: #FFF7EE !important;
+  background-color: transparent !important;
   border: none;
+  border-radius: 0 !important;
   border-bottom: 1px solid #FFF7EE;
 }
 
@@ -1855,6 +1882,7 @@ body {
 }
 
 .application-btn__description {
+  max-width: 300px;
   margin-left: 23px;
   font-weight: 300;
   font-size: 14px;
@@ -2257,6 +2285,14 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   padding: 58px 20px 25px;
+}
+
+.js-path-content {
+  display: none;
+}
+
+.js-path-content.active {
+  display: block;
 }
 
 @media (min-width: 991px) {
@@ -3035,8 +3071,13 @@ body {
     padding-bottom: 70px;
   }
 
-  .video__wrapper {
-    padding-left: 30px;
+  .video__item {
+    max-width: calc(100% - 28px);
+    margin-left: 28px;
+  }
+
+  .video__text {
+    margin-left: 32px;
   }
 
   .application__rigth {
@@ -3227,6 +3268,7 @@ body {
     background-color: #2c2928;
     width: 100%;
     height: 100vh;
+    max-height: 100vh;
     padding-top: 135px;
     padding-bottom: 50px;
   }
@@ -3257,8 +3299,10 @@ body {
 
   .footer .navigation.active {
     z-index: -1;
+    width: 100%;
     height: 100vh;
-    padding-top: 40px;
+    max-height: 100vh;
+    padding-top: 10vh;
     padding-bottom: 160px;
     bottom: 0;
   }
