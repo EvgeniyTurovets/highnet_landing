@@ -1294,6 +1294,7 @@ body {
   font-size: 16px;
   font-weight: 500;
   background-color: #F1F3F6;
+  white-space: normal !important;
 }
 
 .calc .calc__option:hover {
