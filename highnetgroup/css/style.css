@@ -1929,6 +1929,31 @@ body {
   background-color: #FFE9CD;
 }
 
+.error {
+  display: block;
+  margin-top: 20px;
+  color: #ff0000;
+}
+
+.error + .error {
+  margin-top: 10px;
+}
+
+.error + .application-btn__box {
+  margin-top: 20px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff7ee;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
+}
+
 .modal {
   overflow-y: auto;
   max-height: 100vh;

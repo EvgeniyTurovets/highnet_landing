@@ -192,12 +192,50 @@ document.addEventListener("DOMContentLoaded", function () {
     $(this).setCursorPosition(3);
   }).mask("+7 (999) 999 9999");
   // кнопка на форме отправки
-  $('.application-btn').on('click', function () {
-    $(this).closest('.application__form').addClass('hidden');
-    $(this).closest('.application__left').find('.correct').addClass('visible-flex');
+  // $('.application-btn').on('click', function () {
+  // $(this).closest('.application__form').addClass('hidden');
+  // $(this).closest('.application__left').find('.correct').addClass('visible-flex');
+  // });
+
+  // валидация
+  $('.application__form').on('submit', function () {
+    let applicationName = $(this).closest('.application__form').find('.application__name').val();
+    let applicationPhone = $(this).closest('.application__form').find('.application__phone').val();
+    let applicationEmail = $(this).closest('.application__form').find('.application__email').val();
+
+    let countErrors = 0;
+
+    $(".error").remove();
+
+    if (applicationName.length < 1) {
+      $('.application-btn__box').before('<span class="error">Не верно указано имя</span>');
+      countErrors++
+    }
+    if (applicationPhone.length < 1) {
+      $('.application-btn__box').before('<span class="error">Не верно указан номер</span>');
+      countErrors++
+    }
+    if (applicationEmail.length < 1) {
+      $('.application-btn__box').before('<span class="error">Не верно указано почту</span>');
+      countErrors++
+    } else {
+      let pattern = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      let validEmail = pattern.test(applicationEmail);
+      if (!validEmail) {
+        $('.application-btn__box').before('<span class="error">Не верно указано почту</span>');
+        countErrors++
+      }
+    }
+
+    if (countErrors < 1) {
+      $(this).addClass('hidden');
+      $(this).closest('.application__left').find('.correct').addClass('visible-flex');
+      // return true;
+      return false;
+    } else {
+      return false;
+    }
   });
-
-
 
 
   $('.correct__btn').on('click', function () {
