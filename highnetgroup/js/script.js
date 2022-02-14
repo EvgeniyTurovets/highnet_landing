@@ -191,11 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".application__phone").on('click', function () {
     $(this).setCursorPosition(3);
   }).mask("+7 (999) 999 9999");
-  // кнопка на форме отправки
-  // $('.application-btn').on('click', function () {
-  // $(this).closest('.application__form').addClass('hidden');
-  // $(this).closest('.application__left').find('.correct').addClass('visible-flex');
-  // });
 
   // валидация
   $('.application__form').on('submit', function () {
@@ -246,22 +241,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // плеер
-  let video = document.querySelector('.video__item');
-  let videoBtn = document.querySelector('.video__middle');
-  video.volume = 0.2;
+  let video = $('.video__item');
+  video.volume = 0.1;
 
-  video.addEventListener('click', () => {
-    if (video.paused) {
-      videoBtn.classList.add('hidden');
-      video.setAttribute('controls', '');
-      video.play();
+  function changeVideo() {
+    if ($(window).width() <= '475') {
+      $('.video__middle').on('click', function () {
+        $('.video__middle').addClass('active');
+        $('.video__item-mob').attr('controls', '');
+        $('.video__item-mob').trigger('play');
+      })
     }
-  });
-  videoBtn.addEventListener('click', () => {
-    if (video.paused) {
-      videoBtn.classList.add('hidden');
-      video.setAttribute('controls', '');
-      video.play();
+    else {
+      $('.video__middle').on('click', function () {
+        $('.video__middle').addClass('active');
+        $('.video__item-des').attr('controls', '');
+        $('.video__item-des').trigger('play');
+      })
     }
-  });
+  }
+  changeVideo();
+  $(window).on('resize', changeVideo());
 });

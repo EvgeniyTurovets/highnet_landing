@@ -1797,6 +1797,9 @@
     & video {
       width: 100%;
     }
+    &-mob {
+      display: none;
+    }
   }
   &__item-yt {
     position: absolute;
@@ -1808,9 +1811,7 @@
   &__middle {
     position: absolute;
     top: 0;
-    // top: 50%;
     left: 0;
-    // left: 50%;
     width: 100%;
     height: 100%;
     display: flex;
@@ -1819,7 +1820,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    // transform: translate(-50%, -50%);
     cursor: pointer;
     &.active {
       display: none;
@@ -1840,6 +1840,12 @@
     max-height: unset;
     max-width: calc(100% - 28px);
     margin-left: 28px;
+    &-des {
+      display: none;
+    }
+    &-mob {
+      display: block;
+    }
   }
   .video__wrapper-yt {
     padding-bottom: 166%;

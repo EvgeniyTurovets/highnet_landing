@@ -1723,6 +1723,10 @@ body {
   width: 100%;
 }
 
+.video__item-mob {
+  display: none;
+}
+
 .video__item-yt {
   position: absolute;
   top: 0;
@@ -3369,6 +3373,14 @@ input:-webkit-autofill {
     max-height: unset;
     max-width: calc(100% - 28px);
     margin-left: 28px;
+  }
+
+  .video__item-des {
+    display: none;
+  }
+
+  .video__item-mob {
+    display: block;
   }
 
   .video__wrapper-yt {
